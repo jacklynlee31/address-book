@@ -7,6 +7,7 @@ Build a basic address book app using Laravel 5.1. The app should demonstrate the
 
 ### Completing the Project
 * Installed Composer & Laravel
+* Set up a server on localhost:8888 using PHP
 
 <br><br>
 
