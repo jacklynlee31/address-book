@@ -8,3 +8,6 @@ Build a basic address book app using Laravel 5.1. The app should demonstrate the
 ### Completing the Project
 * Installed Composer & Laravel
 * Set up a server on localhost:8888 using PHP
+* Installed Virtual Box & Vagrant
+* Successfully installed Homestead but kept getting timeout errors in the browser. Decided to use PHP's built-in server instead.
+* Created an initial new controller and returned 'hello world' to the browser.
