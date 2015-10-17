@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class WelcomeController extends Controller
+class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
-    }
-    public function contact()
-    {
-        return view('pages.contact');
+        //
     }
 
     /**
