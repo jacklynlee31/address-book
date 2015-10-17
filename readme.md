@@ -11,3 +11,6 @@ Build a basic address book app using Laravel 5.1. The app should demonstrate the
 * Installed Virtual Box & Vagrant
 * Successfully installed Homestead but kept getting timeout errors in the browser. Decided to use PHP's built-in server instead.
 * Created an initial new controller and returned 'hello world' to the browser.
+
+### Further Questions
+* I would like to find out how to resolve my 'timeout' issue while trying to get the Virtual Box / Vagrant running.
