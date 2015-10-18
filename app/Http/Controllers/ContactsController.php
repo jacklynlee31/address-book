@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -36,28 +37,9 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = array(
-            'name'  => 'required',
-            'address'  => 'required',
-            'phonenumber'  => 'required|numeric',
-        );
-        $validator = Validator::make(Input::all(), $rules);
-        if ($validator->fails()) {
-            return Redirect::to('contacts/create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
-            // store
-            $contact = new Nerd;
-            $contact->name       = Input::get('name');
-            $contact->address      = Input::get('address');
-            $contact->phonenumber = Input::get('phonenumber');
-            $contact->save();
-
-            // redirect
-            Session::flash('message', 'Successfully created a new contact!');
-            return Redirect::to('contacts');
-        }
+        $input = $request->all();
+        Contact::create($input);
+        return redirect()->back();
     }
 
     /**
