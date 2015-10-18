@@ -56,7 +56,8 @@ class ContactsController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+        return view('contacts.show')->withContact($contact);
     }
 
     /**
@@ -67,7 +68,9 @@ class ContactsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+
+        return view('contacts.edit')->withContact($contact);
     }
 
     /**
@@ -77,9 +80,20 @@ class ContactsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        //
+        $contact = Contact::findOrFail($id);
+
+        $this->validate($request, [
+               'name' => 'required',
+               'address' => 'required',
+               'phone' => 'required'
+        ]);
+
+        $input = $request->all();
+        $contact->fill($input)->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -90,6 +104,10 @@ class ContactsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+
+        $contact->delete();
+
+        return redirect()->route('contacts.index');
     }
 }

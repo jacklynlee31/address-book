@@ -8,8 +8,8 @@
     <p>{{ $contact->address}}</p>
     <p>{{ $contact->phone}}</p>
     <p>
-        <a href="{{ route('contacts.show', $contact->id) }}" class="view">View Contact</a>
         <a href="{{ route('contacts.edit', $contact->id) }}" class="edit">Edit Contact</a>
+        <a href="{{ route('contacts.show', $contact->id) }}" class="edit">View Contact</a>
     </p>
     <hr>
 @endforeach

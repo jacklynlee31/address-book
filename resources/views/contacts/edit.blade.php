@@ -1,12 +1,13 @@
 @extends('templates.main')
 @section('content')
 
-<h1>Add a new Contact</h1>
+<h1>Edit Contact</h1>
 
 @include('partials.alerts.errors')
 
-{!! Form::open([
-    'route' => 'contacts.store'
+{!! Form::model($contact, [
+    'method' => 'PATCH',
+    'route' => ['contacts.update', $contact->id]
 ]) !!}
 
 <div class="form-name">
@@ -24,8 +25,9 @@
     {!! Form::text('phone', null, ['class' => 'form-control']) !!}
 </div>
 
-{!! Form::submit('Create New Contact', ['class' => 'btn btn-primary']) !!}
-
+{!! Form::submit('Update Contact', ['class' => 'update']) !!}
 {!! Form::close() !!}
+
+<a href="{{ route('contacts.index') }}">Go back to the Address Book</a>
 
 @stop
