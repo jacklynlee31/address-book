@@ -16,7 +16,8 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        return view('contacts.index');
+        $contacts = Contact::all();
+        return view('contacts.index')->withContacts($contacts);
     }
 
     /**
@@ -37,6 +38,11 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'address' => 'required',
+            'phone' => 'required'
+        ]);
         $input = $request->all();
         Contact::create($input);
         return redirect()->back();

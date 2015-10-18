@@ -3,6 +3,14 @@
 
 <h1>Add a new Contact</h1>
 
+@if($errors->any())
+    <div class="required">
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </div>
+@endif
+
 {!! Form::open([
     'route' => 'contacts.store'
 ]) !!}
