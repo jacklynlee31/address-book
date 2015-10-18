@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+.button {
+    background-color: #CFFFEF;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+    text-decoration: none;
+}
+.button2 {
+    background-color: #CFFFEF;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+    text-decoration: none;
+}
+.add {
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+}
+.book {
+    line-height: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    width: 800px;
+    margin: auto;
+}
