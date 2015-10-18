@@ -3,21 +3,27 @@
 
 <h1>Add a new Contact</h1>
 
-{{ Form::open(array('url' => 'contacts')) }}
-<div>
-    {{ Form::label('name', 'Name') }}
-    {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+{!! Form::open([
+    'route' => 'contacts.store'
+]) !!}
+
+<div class="form-name">
+    {!! Form::label('name', 'Name:', ['class' => 'control-label']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
-<div>
-    {{ Form::label('address', 'Address') }}
-    {{ Form::text('address', Input::old('address'), array('class' => 'form-control')) }}
+<div class="form-address">
+    {!! Form::label('address', 'Address:', ['class' => 'control-label']) !!}
+    {!! Form::text('address', null, ['class' => 'form-control']) !!}
 </div>
 
-<div>
-    {{ Form::label('phone', 'Phone') }}
-    {{ Form::string('phone', Input::old('phone'), array('class' => 'form-control')) }}
+<div class="form-phone">
+    {!! Form::label('phone', 'Phone:', ['class' => 'control-label']) !!}
+    {!! Form::text('phone', null, ['class' => 'form-control']) !!}
 </div>
-{{ Form::close() }}
+
+{!! Form::submit('Create New Task', ['class' => 'btn btn-primary']) !!}
+
+{!! Form::close() !!}
 
 @stop
