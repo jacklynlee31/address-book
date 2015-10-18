@@ -9,8 +9,8 @@
 <body>
 
 <div class="nav">
-    <a href="#">Home</a>
-    <a href="#">Address Book</a>
+    <a href="{{ route('home') }}">Home</a>
+    <a href="{{ route('contacts.index') }}">Address Book</a>
 </div>
 
 <div>
